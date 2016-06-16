@@ -7,12 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div class="container">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        User Options
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <% if user_signed_in? %>
+          <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", "/users/sign_up" %></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Sign In", "/users/sign_in" %></li>
+        <% end %>
+      </ul>
+  </div>
     <% flash.each do |name, message| %>
     <div class="alert alert-<%= name %> alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <strong><%= name.upcase %></strong> <%= message %>
     </div>
+
   <% end %>
 
 <%= yield %>
