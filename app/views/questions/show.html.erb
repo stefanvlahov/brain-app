@@ -10,7 +10,7 @@
             <% @question.answers.each do |answer| %>
             <div>
               <%= radio_button_tag(:answer_id, answer.id) %>
-              <%= label_tag(:answer, answer.answer) %>
+              <%= label_tag(:answer_id, answer.answer) %>
             </div>
             <% end %>
             <div>

@@ -6,7 +6,9 @@
   <div class="col-md-6 col-centered">
     <div class="thumbnail">
       <% @user_answers.each do |user_answer| %>
-        <h3><%= user_answer.answer_id %></h3>
+        <h4>Category: <%= user_answer.answer.question.category.name %></h4>
+        <h4>Question: <%= user_answer.answer.question.question %></h4>
+        <p>Answer Choice: <%= user_answer.answer.answer %></p>
       <% end %>
     </div>
   </div>

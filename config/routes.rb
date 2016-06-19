@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get "/questions/:id" => "questions#show"
   post "/user_answers" => "user_answers#create"
-  get "/results" => "results#index"
+
+  get "/user_answers" => "user_answers#show"
 
   get "/recommendations" => "recommendations#index"
 
