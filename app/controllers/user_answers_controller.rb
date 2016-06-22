@@ -8,13 +8,18 @@ class UserAnswersController < ApplicationController
       user_id: current_user.id
     )
     if params[:question_id].to_i > Question.last.id
-      redirect_to "/user_answers"
+      redirect_to "/results"
     else
       redirect_to "/questions/#{ params[:question_id] }"
     end
   end
 
+
   def show
-    @user_answers = UserAnswer.where(user_id: current_user.id)
+    @user_answers = UserAnswer.last(4)
+
+    # @current_answers = @user_answers.all(id: current_user.id)
+    # @user_answers = UserAnswer.find(:all, :order => "id desc", :limit => 5)
   end
+
 end

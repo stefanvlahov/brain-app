@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/questions/:id" => "questions#show"
   post "/user_answers" => "user_answers#create"
 
-  get "/user_answers" => "user_answers#show"
+  get "/results" => "user_answers#show"
 
   get "/recommendations" => "recommendations#index"
 

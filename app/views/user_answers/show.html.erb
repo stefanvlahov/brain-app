@@ -1,15 +1,16 @@
 <div class="page-header">
-  <h1>Your Answers!</h1>
+  <h1><%= current_user.email %> Your Results!</h1>
 </div>
 
 <div class="row">
   <div class="col-md-6 col-centered">
-    <div class="thumbnail">
-      <% @user_answers.each do |user_answer| %>
+    <% @user_answers.each do |user_answer| %>
+      <div class="thumbnail">
         <h4>Category: <%= user_answer.answer.question.category.name %></h4>
         <h4>Question: <%= user_answer.answer.question.question %></h4>
         <p>Answer Choice: <%= user_answer.answer.answer %></p>
-      <% end %>
-    </div>
+      </div>
+      <h4>Brain Score: <%= user_answer.brain_score %></h4>
+    <% end %>
   </div>
 </div>

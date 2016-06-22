@@ -19,6 +19,9 @@
             <div>
               <%= submit_tag "Submit" %>
             </div>
+            <% if @question.id > 2 %>
+              <button class="btn btn-default" type="submit"><%= link_to "Previous", "#{@question.id - 1}" %></button>
+            <% end %>
           </div>
         </div>
     <% end %>
