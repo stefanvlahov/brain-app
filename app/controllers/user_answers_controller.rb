@@ -13,13 +13,12 @@ class UserAnswersController < ApplicationController
       redirect_to "/questions/#{ params[:question_id] }"
     end
   end
-
-
+  
   def show
     @user_answers = UserAnswer.last(4)
 
-    # @current_answers = @user_answers.all(id: current_user.id)
-    # @user_answers = UserAnswer.find(:all, :order => "id desc", :limit => 5)
-  end
+    # @answer_influence = (100.to_f / (Question.sum(:influence_score))).to_f
 
+    @brain_score = current_user.score
+  end
 end

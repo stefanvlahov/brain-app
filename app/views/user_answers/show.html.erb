@@ -10,7 +10,8 @@
         <h4>Question: <%= user_answer.answer.question.question %></h4>
         <p>Answer Choice: <%= user_answer.answer.answer %></p>
       </div>
-      <h4>Brain Score: <%= user_answer.brain_score %></h4>
     <% end %>
+      <h4> <%= @answer_influence %></h4>
+      <h4><%= number_to_percentage(@brain_score) %></h4>
   </div>
 </div>

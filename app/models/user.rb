@@ -10,4 +10,35 @@ class User < ActiveRecord::Base
   has_many :recommended_treatments
   has_many :treatments, through: :recommended_treatments
 
+  def score
+    answers = self.answers
+    questions = []
+    answers.each do |answer|
+      questions << answer.question
+    end
+
+    questions_sum = 0
+
+    questions.each do |question|
+      questions_sum += question.weight
+    end
+
+    @answer_weight = 0
+
+    answers.each do |answer|
+      @answer_weight += (100 / questions_sum) * answer.multiplier
+    end
+
+    50 + @answer_weight
+
+    # questions_sum * answers.multiplier
+    # answers_sum = 0
+    #
+    # answers.each do |answer|
+    #   answers_sum += answer.impact
+    # end
+
+    # 100 * (answers_sum / questions_sum)
+
+  end
 end

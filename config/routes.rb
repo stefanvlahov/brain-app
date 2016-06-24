@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   get "/questions/:id" => "questions#show"
-  post "/user_answers" => "user_answers#create"
 
+  post "/user_answers" => "user_answers#create"
   get "/results" => "user_answers#show"
 
+  post "/recommendations" => "recommendations#create"
   get "/recommendations" => "recommendations#index"
 
 end
