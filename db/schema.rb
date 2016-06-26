@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623214831) do
+ActiveRecord::Schema.define(version: 20160625164556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answer_treatments", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "answer_id"
-    t.integer  "treatment_id"
-  end
 
   create_table "answers", force: :cascade do |t|
     t.string   "answer"
@@ -30,6 +23,13 @@ ActiveRecord::Schema.define(version: 20160623214831) do
     t.integer  "question_id"
     t.integer  "multiplier"
   end
+
+  create_table "answers_treatments", id: false, force: :cascade do |t|
+    t.integer "answer_id"
+    t.integer "treatment_id"
+  end
+
+  add_index "answers_treatments", ["answer_id", "treatment_id"], name: "index_answers_treatments_on_answer_id_and_treatment_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"

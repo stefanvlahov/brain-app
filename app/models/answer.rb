@@ -2,8 +2,7 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :user_answers
   has_many :users, through: :user_answers
-  has_many :answer_treatments
-  has_many :treatments, through: :answer_treatments
+  has_and_belongs_to_many :treatments
 
   # def impact
   #   (question.weight / 2) + multiplier
