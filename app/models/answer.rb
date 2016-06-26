@@ -4,9 +4,9 @@ class Answer < ActiveRecord::Base
   has_many :users, through: :user_answers
   has_and_belongs_to_many :treatments
 
-  # def impact
-  #   (question.weight / 2) + multiplier
-  # end
+  def impact
+    multiplier
+  end
 
 end
 

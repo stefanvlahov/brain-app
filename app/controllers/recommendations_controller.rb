@@ -9,6 +9,6 @@ class RecommendationsController < ApplicationController
   end
 
   def index
-
+    
   end
 end

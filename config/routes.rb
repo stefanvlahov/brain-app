@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post "/user_answers" => "user_answers#create"
   get "/results" => "user_answers#show"
 
+  post "/survey" => "user_survey#create"
+
   post "/recommendations" => "recommendations#create"
   get "/recommendations" => "recommendations#index"
 
