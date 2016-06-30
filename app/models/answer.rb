@@ -1,7 +1,7 @@
 class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :user_answers
-  has_many :users, through: :user_answers
+  has_many :user_surveys, through: :user_answers
   has_and_belongs_to_many :treatments
 
   def impact

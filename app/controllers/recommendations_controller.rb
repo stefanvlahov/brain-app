@@ -9,6 +9,7 @@ class RecommendationsController < ApplicationController
   end
 
   def index
-    
+    @treatments = current_user.treatments.keys
+    # @treatment_descriptions = current_user.treatment_descriptions.keys.sort
   end
 end

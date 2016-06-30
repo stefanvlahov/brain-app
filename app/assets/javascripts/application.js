@@ -13,4 +13,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require angular
+//= require app
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .

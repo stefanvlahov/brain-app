@@ -1,7 +1,13 @@
 class UserSurveysController < ApplicationController
 
-  @user_survey = UserSurveysController.create(
-    question_id: params[:answer_id],
-    user_id: current_user.id
-  )
+  def create
+    @user_survey = UserSurvey.create(
+      user_id: current_user.id
+    )
+
+    first_question = Question.first.id
+
+    redirect_to "/survey/questions/#{first_question}"
+  end
+
 end
