@@ -46,27 +46,18 @@ class User < ActiveRecord::Base
   # end
 
   def treatments
-    treatments_array = []
-    user_surveys.last.user_answers.answer.each do |answer|
-      treatments_array << answer.treatments
+    treatments = []
+    user_surveys.last.user_answers.each do |user_answer|
+      treatments << user_answer.answer.treatments
     end
-
-    freq = treatments_array.inject(Hash.new(0)) { |sum, n| sum[n] += 1 ;sum}
-    max = freq.values.max
-    freq.select { |k, f| f == max }
-    # treatments = []
-    # user_surveys.last.user_answers.each do |user_answer|
-    #   treatments << user_answer.answer.treatments
-    # end
-    # treatment_names = []
-    # treatments.each do |treatment|
-    #   treatment.each do |specific|
-    #     treatment_names << specific.name
-    #   end
-    # end
-    # freq = treatment_names.inject(Hash.new(0)) { |sum, n| sum[n] += 1 ;sum}
-    # max = freq.values.max
-    # freq.select { |k, f| f == max }
+    treatment_names = []
+    treatments.each do |treatment|
+      treatment.each do |specific|
+        treatment_names << specific
+      end
+    end
+    freq = treatment_names.inject(Hash.new(0)) { |sum, n| sum[n] += 1 ;sum}
+    freq.sort_by { |k, f| -f }[0..2]
   end
 
   # def treatment_descriptions

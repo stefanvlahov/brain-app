@@ -11,7 +11,11 @@
         <p>Answer Choice: <%= user_answer.answer.answer %></p>
       </div>
     <% end %>
-      <h4> <%= @answer_influence %></h4>
+  <div class="progress">
+      <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="<%= @brain_score %>" style="width: <%= @brain_score %>%">
+        <span class="sr-only"><%= @brain_score %> Complete (danger)</span>
+      </div>
+  </div>
       <h4><%= number_to_percentage(@brain_score) %></h4>
   </div>
     <button class="btn btn-success" type="submit"><%= link_to "Treatments!", "/recommendations" %></button>

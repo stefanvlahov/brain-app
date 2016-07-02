@@ -16,7 +16,7 @@ class UserAnswersController < ApplicationController
   end
 
   def index
-    @user_answers = UserAnswer.last(4)
+    @user_answers = UserSurvey.last.user_answers
 
     # @answer_influence = (100.to_f / (Question.sum(:influence_score))).to_f
 
