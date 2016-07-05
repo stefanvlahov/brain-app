@@ -4,19 +4,54 @@
 
 <div class="row">
   <div class="col-md-6 col-centered">
-    <% @user_answers.each do |user_answer| %>
-      <div class="thumbnail">
-        <h4>Category: <%= user_answer.answer.question.category.name %></h4>
-        <h4>Question: <%= user_answer.answer.question.question %></h4>
-        <p>Answer Choice: <%= user_answer.answer.answer %></p>
-      </div>
+    <% @categories.each do |category| %>
+    <div class="thumbnail">
+      <h4>Category: <%= category.name %>
+
+    </div>
     <% end %>
-  <div class="progress">
-      <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="<%= @brain_score %>" style="width: <%= @brain_score %>%">
-        <span class="sr-only"><%= @brain_score %> Complete (danger)</span>
+    <canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+      labels: ["Diet", "Sleep", "Exercise"],
+      datasets: [{
+          label: 'Category Score',
+          data: [12, 19, 3],
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)'
+          ],
+          borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)'
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero:true
+              }
+          }]
+      }
+  }
+});
+</script>
+
+    <h3>Your Brain Score:</h3>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="<%= @brain_score %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @brain_score %>%"><%= @brain_score %>%
+        <span class="sr-only"> <%= @brain_score %> Complete </span>
       </div>
-  </div>
-      <h4><%= number_to_percentage(@brain_score) %></h4>
+    </div>
+
   </div>
     <button class="btn btn-success" type="submit"><%= link_to "Treatments!", "/recommendations" %></button>
 </div>
