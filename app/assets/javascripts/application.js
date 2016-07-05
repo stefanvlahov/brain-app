@@ -17,6 +17,7 @@
 //= require app
 //= require Chart.bundle
 //= require chartkick
+//= require /plugins
 //= require contact-form
 //= require jquery-1.11.2
 //= require map
