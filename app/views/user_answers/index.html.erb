@@ -7,10 +7,10 @@
     <% @categories.each do |category| %>
     <div class="thumbnail">
       <h4>Category: <%= category.name %>
-
     </div>
     <% end %>
-    <canvas id="myChart" width="400" height="400"></canvas>
+
+<canvas id="myChart" width="400" height="400"></canvas>
 <script>
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
@@ -45,11 +45,9 @@ var myChart = new Chart(ctx, {
 });
 </script>
 
-    <h3>Your Brain Score:</h3>
+    <h3>Your Brain Score: <span id="quota"><%= @brain_score %></span>%</h3>
     <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="<%= @brain_score %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @brain_score %>%"><%= @brain_score %>%
-        <span class="sr-only"> <%= @brain_score %> Complete </span>
-      </div>
+      <div id=myProgress class="progress-bar progress-bar-danger" role="progressbar"><%= @brain_score %>%</div>
     </div>
 
   </div>

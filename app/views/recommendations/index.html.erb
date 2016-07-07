@@ -13,8 +13,17 @@
         </h4>
       </div>
       <div id="collapse<%= idx.to_s %>" class="panel-collapse collapse in">
-        <div class="panel-body"><%= specific[0]["description"] %></div>
+        <div class="panel-body">
+          <%= specific[0]["description"] %>
+            <% if specific[0]["name"] == "Yoga" %>
+              <% @yoga_locations.each do |yoga| %>
+                <%= yoga["name"] %>
+                <%= yoga["vicinity"] %>
+              <% end %>
+            <% end %>
+        </div>
       </div>
+
       <% end %>
     </div>
   </div>
