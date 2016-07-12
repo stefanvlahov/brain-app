@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-switch
 //= require angular
 //= require app
 //= require Chart.bundle

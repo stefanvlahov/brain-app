@@ -9,21 +9,91 @@
       <% @treatments.each_with_index do |specific, idx| %>
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= idx.to_s %>" ><%= specific[0]["name"] %></a>
+          <a data-parent="#accordion" ><%= specific[0]["name"] %></a>
         </h4>
       </div>
-      <div id="collapse<%= idx.to_s %>" class="panel-collapse collapse in">
+      <div class="panel-collapse collapse in">
         <div class="panel-body">
           <%= specific[0]["description"] %>
             <% if specific[0]["name"] == "Yoga" %>
               <% @yoga_locations.each do |yoga| %>
                 <%= yoga["name"] %>
                 <%= yoga["vicinity"] %>
+                <%= yoga["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Acupuncture" %>
+              <% @acupuncture_locations.each do |acupuncture| %>
+                <%= acupuncture["name"] %>
+                <%= acupuncture["vicinity"] %>
+                <%= acupuncture["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Supplements" %>
+              <% @supplements_locations.each do |supplement| %>
+                <%= supplement["name"] %>
+                <%= supplement["vicinity"] %>
+                <%= supplement["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Tai Chi/Matial Arts" %>
+              <% @taichi_locations.each do |tai| %>
+                <%= tai["name"] %>
+                <%= tai["vicinity"] %>
+                <%= tai["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Biofeedback" %>
+              <% @biofeedback_locations.each do |biofeedback| %>
+                <%= biofeedback["name"] %>
+                <%= biofeedback["vicinity"] %>
+                <%= biofeedback["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Massage Therapy" %>
+              <% @massage_locations.each do |massage| %>
+                <%= massage["name"] %>
+                <%= massage["vicinity"] %>
+                <%= massage["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Running" %>
+              <% @running_locations.each do |running| %>
+                <%= running["name"] %>
+                <%= running["vicinity"] %>
+                <%= running["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Nutrition Training" %>
+              <% @nutrition_locations.each do |nutrition| %>
+                <%= nutrition["name"] %>
+                <%= nutrition["vicinity"] %>
+                <%= nutrition["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Hypnotherapy" %>
+              <% @hypnotherapy_locations.each do |hypnotherapy| %>
+                <%= hypnotherapy["name"] %>
+                <%= hypnotherapy["vicinity"] %>
+                <%= hypnotherapy["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Meditation" %>
+              <% @meditation_locations.each do |meditation| %>
+                <%= meditation["name"] %>
+                <%= meditation["vicinity"] %>
+                <%= meditation["rating"] %>
+              <% end %>
+            <% end %>
+            <% if specific[0]["name"] == "Get a Pet" %>
+              <% @pet_locations.each do |pet| %>
+                <%= pet["name"] %>
+                <%= pet["vicinity"] %>
+                <%= pet["rating"] %>
               <% end %>
             <% end %>
         </div>
       </div>
-
       <% end %>
     </div>
   </div>

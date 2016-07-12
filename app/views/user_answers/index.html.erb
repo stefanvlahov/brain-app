@@ -2,11 +2,13 @@
   <h1><%= current_user.email %> Your Results!</h1>
 </div>
 
+<%= @category_performance %>
+
 <div class="row">
   <div class="col-md-6 col-centered">
     <% @categories.each do |category| %>
-    <div class="thumbnail">
-      <h4>Category: <%= category.name %>
+    <div id="category" class="thumbnail">
+      <h4><%= category.name %>
     </div>
     <% end %>
 

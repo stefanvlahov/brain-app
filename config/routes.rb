@@ -4,13 +4,19 @@ Rails.application.routes.draw do
 
   post "/surveys" => "user_surveys#create"
   get "/survey/questions/:id" => "questions#show"
-  # get "/survey/questions/:id" => "user_surveys#show"
+
+  namespace :api do
+    namespace :v1 do
+      get "/survey/questions/:id" => "questions#show"
+    end
+  end
 
   post "/user_answers" => "user_answers#create"
   get "/survey/results" => "user_answers#index"
 
   namespace :api do
     namespace :v1 do
+      post "/user_answers" => "user_answers#create"
       get "/survey/results" => "user_answers#index"
     end
   end

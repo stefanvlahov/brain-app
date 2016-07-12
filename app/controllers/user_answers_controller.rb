@@ -19,6 +19,7 @@ class UserAnswersController < ApplicationController
     @user_answers = UserSurvey.last.user_answers
     @categories = Category.all
     @questions = Question.all
+    @category_performance = Category.find(1).influence_score
 
     # @answer_influence = (100.to_f / (Question.sum(:influence_score))).to_f
 

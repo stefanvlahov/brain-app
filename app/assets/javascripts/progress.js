@@ -7,11 +7,17 @@ function setProgress(percent) {
   bar.style.width = percent + "%";
 
   if (percent > 35) {
-    bar.className = "progress-bar progress-bar-success";
-  } else if (percent > 70) {
     bar.className = "progress-bar progress-bar-warning";
+  } else if (percent > 70) {
+    bar.className = "progress-bar progress-bar-success";
   }
 }
 
 setProgress(quota);
+
+var category = document.getElementById(category);
+
+function setColor(){
+
+}
 };
