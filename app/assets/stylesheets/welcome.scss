@@ -2,16 +2,76 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*
+========================================
+Custom Styles
+========================================
+*/
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+video#video-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#main {
+  /* Margin bottom by footer height */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#main-content {
+    flex: 1;
+}
+
+.dropdown {
+  padding: 10px;
+}
+
 h1 {
-  display: block;
+  display:block;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.start {
   text-align: center;
 }
 
 .herobutton {
-  text-align: center;
+  background-image: image-url("Drawing.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  margin-bottom: 20px;
+  height: 300px;
+  width: 200px;
+  outline: 0;
+  border: none;
+  position: relative;
 }
 
-.btn-lg {
-  position: relative;;
-  top: 50%;
+.herobutton span {
+  display: none;
 }
+
+// .btn-lg {
+//   position: relative;
+//   top: 50%;
+// }

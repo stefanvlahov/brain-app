@@ -1,0 +1,28 @@
+<div class="container">
+
+<div class="page-header">
+  <h1><%= current_user.email %> Your Results!</h1>
+</div>
+
+<%= @category_performance %>
+
+<div class="row">
+  <div class="col-md-6 col-centered">
+    <% @categories.each do |category| %>
+    <div id="category" class="thumbnail">
+      <h4><%= category.name %>
+    </div>
+    <% end %>
+    <div>
+    <%= column_chart @user_answers.group(:user_survey_id).sum(:answer_id) %>
+    </div>
+    <h3>Your Brain Score: <span id="quota"><%= @brain_score %></span>%</h3>
+    <div class="progress">
+      <div id=myProgress class="progress-bar progress-bar-danger" role="progressbar"><%= @brain_score %>%</div>
+    </div>
+
+  </div>
+    <button class="btn btn-success" type="submit"><%= link_to "Treatments!", "/recommendations" %></button>
+</div>
+
+</div>

@@ -8,18 +8,16 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "/survey/questions/:id" => "questions#show"
+      post "/results" => "results#create"
+      get "/survey/results" => "results#index"
     end
   end
 
-  post "/user_answers" => "user_answers#create"
-  get "/survey/results" => "user_answers#index"
+  # get '/last_choice/:id' => 'results#last_choice'
+  get '/results' => 'results#index'
 
-  namespace :api do
-    namespace :v1 do
-      post "/user_answers" => "user_answers#create"
-      get "/survey/results" => "user_answers#index"
-    end
-  end
+  # post "/user_answers" => "user_answers#create"
+  # get "/survey/results" => "user_answers#index"
 
   post "/recommendations" => "recommendations#create"
   get "/recommendations" => "recommendations#index"

@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require bootstrap3-switch
+ *= require font-awesome
+ *= require app
  *= require_tree .
  *= require_self
  */

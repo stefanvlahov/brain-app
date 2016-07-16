@@ -1,8 +1,15 @@
-<div ng-app="app" class="page-header">
-  {{ 1 + 5 }}
-  <h1>Survey Questions</h1>
-  <div ng-controller="brainCtrl" ng-init="setup()" class="thumbnail">
+<div ng-app="app" >
+  <div class="page-header">
+    {{ 1 + 5 }}
+    <h1>Survey Questions</h1>
+  </div>
+  <div id="qholder" ng-controller="brainCtrl" ng-init="setup()" class="thumbnail">
     <div id="questions">{{ currentQuestion }}</div>
-    <button ng-repeat="choice in choices" ng-click="submitAnswer(choice.id)">{{ choice.answer }}</button>
+      <div id="answers">
+        <button class="btn btn-default" ng-repeat="choice in choices" ng-click="submitAnswer(choice.id)">{{ choice.answer }}</button>
+      </div>
+  </div>
+  <div class="resultsbtn">
+    <button type="submit" class="btn btn-success btn-lg">See Results</button>
   </div>
 </div>

@@ -3,8 +3,10 @@ class Api::V1::QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
 
-    if @question = Question.last
-      return render json: {}
+    @last = Question.last.id
+
+    if @question == @last
+      redirect_to "/survey/results"
     end
   end
 end
