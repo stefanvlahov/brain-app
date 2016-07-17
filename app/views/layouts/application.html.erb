@@ -11,11 +11,11 @@
 <body class="main">
 
   <div id="main-content" class="container">
-    <div id="header">
+    <div class="header">
       <div class="dropdown">
-        <a class="btn btn-default" href="/" role="button">Home</a>
+        <a class="btn btn-default" href="/" role="button"><i class="fa fa-heartbeat fa-lg" aria-hidden="true"></i> Home</a>
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          User Options
+          <i class="fa fa-user fa-lg" aria-hidden="true"></i> User Options
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -28,7 +28,7 @@
           <% end %>
         </ul>
       </div>
-    </div>
+
     <% flash.each do |name, message| %>
     <div class="alert alert-<%= name %> alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -36,7 +36,7 @@
     </div>
     <% end %>
   </div>
-
+  </div>
   <%= yield %>
 
   <div class="footer">

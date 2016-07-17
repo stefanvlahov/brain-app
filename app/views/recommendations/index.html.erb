@@ -16,32 +16,32 @@
         <div class="panel-body">
           <%= specific[0]["description"] %>
             <% if specific[0]["name"] == "Yoga" %>
-              <% @yoga_locations.each do |yoga| %>
+            <% @yoga_locations.each do |yoga| %>
                 <%= yoga["name"] %>
                 <%= yoga["vicinity"] %>
-                <%= yoga["rating"] %>
+                <%= yoga["rating"] %>\
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Acupuncture" %>
-              <% @acupuncture_locations.each do |acupuncture| %>
+            <% @acupuncture_locations.each do |acupuncture| %>
                 <%= acupuncture["name"] %>
                 <%= acupuncture["vicinity"] %>
                 <%= acupuncture["rating"] %>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Supplements" %>
-              <% @supplements_locations.each do |supplement| %>
-                <%= supplement["name"] %>
-                <%= supplement["vicinity"] %>
-                <%= supplement["rating"] %>
+            <% @supplements_locations.each do |supplements| %>
+                <%= supplements["name"] %>
+                <%= supplements["vicinity"] %>
+                <%= supplements["rating"] %>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Tai Chi/Matial Arts" %>
-              <% @taichi_locations.each do |tai| %>
+            <% @taichi_locations.each do |tai| %>
                 <%= tai["name"] %>
                 <%= tai["vicinity"] %>
                 <%= tai["rating"] %>
-              <% end %>
+                <% end %>
             <% end %>
             <% if specific[0]["name"] == "Biofeedback" %>
               <% @biofeedback_locations.each do |biofeedback| %>
@@ -58,7 +58,7 @@
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Running" %>
-              <% @running_locations.each do |running| %>
+            <% @running_locations.each do |running| %>
                 <%= running["name"] %>
                 <%= running["vicinity"] %>
                 <%= running["rating"] %>
