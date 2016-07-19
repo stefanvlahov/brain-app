@@ -5,7 +5,7 @@
   <div id="qholder" ng-controller="brainCtrl" ng-init="setup()" class="thumbnail">
     <div id="questions">{{ currentQuestion }}</div>
       <div id="answers">
-        <button class="btn btn-default" ng-repeat="choice in choices" ng-click="submitAnswer(choice.id)">{{ choice.answer }}</button>
+        <button class="btn btn-info" ng-repeat="choice in choices" ng-click="submitAnswer(choice.id)">{{ choice.answer }}</button>
       </div>
   </div>
   <div class="resultsbtn">

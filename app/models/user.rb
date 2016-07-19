@@ -9,17 +9,68 @@ class User < ActiveRecord::Base
   has_many :recommended_treatments
   has_many :treatments, through: :recommended_treatments
 
-  def category_performance
-    user_scores = []
-    user_surveys.last.user_answers.each do |user_answer|
-      user_scores << user_answer.answer.multiplier
-    end
-    user_scores
+  def diet_positive?
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Diet"}
+    @diet_score = 0
+    selected_answers.each { |answer| @diet_score += answer.multiplier }
+    @diet_score > 0
+  end
 
-    # user_scores.each do |category|
-    #   performance = category.influence_score + user_answers.answers.influence_score
-    # end
-    # performance
+  def diet_score
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Diet"}
+    @diet_score = 0
+    selected_answers.each { |answer| @diet_score += answer.multiplier }
+    @diet_score
+  end
+
+  def exercise_positive?
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Exercise"}
+    @exercise_score = 0
+    selected_answers.each { |answer| @exercise_score += answer.multiplier }
+    @exercise_score > 0
+  end
+
+  def exercise_score
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Exercise"}
+    @exercise_score = 0
+    selected_answers.each { |answer| @exercise_score += answer.multiplier }
+    @exercise_score
+  end
+
+  def stress_positive?
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Stress"}
+    @stress_score = 0
+    selected_answers.each { |answer| @stress_score += answer.multiplier }
+    @stress_score > 0
+  end
+
+  def stress_score
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Stress"}
+    @stress_score = 0
+    selected_answers.each { |answer| @stress_score += answer.multiplier }
+    @stress_score
+  end
+
+  def sleep_positive?
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Sleep"}
+    @sleep_score = 0
+    selected_answers.each { |answer| @sleep_score += answer.multiplier }
+    @sleep_score > 0
+  end
+
+  def sleep_score
+    all_answers = UserSurvey.last.answers
+    selected_answers = all_answers.select{ |answer| answer.category.name == "Sleep"}
+    @sleep_score = 0
+    selected_answers.each { |answer| @sleep_score += answer.multiplier }
+    @sleep_score
   end
 
   def score
@@ -37,10 +88,10 @@ class User < ActiveRecord::Base
     @answer_weight = 0
 
     user_surveys.last.user_answers.each do |user_answer|
-      @answer_weight = @answer_weight + ((100 / questions_sum) * user_answer.answer.impact)
+      @answer_weight = @answer_weight + ((100 / questions_sum) * (user_answer.answer.impact * 0.585))
     end
 
-    50 + @answer_weight
+    50 + @answer_weight.to_i
   end
 
   def treatments

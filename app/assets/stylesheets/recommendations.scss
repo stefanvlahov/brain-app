@@ -2,6 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.btn {
+h1 {
+  font-weight: bold;
+}
+
+.description {
+  margin-left: 3px;
+  margin-bottom: -2px;
+}
+
+.treatment-title:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.col-md-4 {
+  height: 90px;
+  max-height: 100px;
+  max-width: 400px;
+  border: none;
+}
+
+.loc-name {
+  margin: 3px;
+}
+
+.loc-add {
+  margin: 3px;
+}
+
+.loc-rate {
+  margin: 3px;
+}
+
+
+.btn btn-info {
   text-decoration: none;
 }

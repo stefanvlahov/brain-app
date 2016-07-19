@@ -14,9 +14,15 @@ class Api::V1::ResultsController < ApplicationController
     @user_answers = UserSurvey.last.user_answers
     @categories = Category.all
     @questions = Question.all
-    @category_performance = Category.find(1).influence_score
 
-    # @answer_influence = (100.to_f / (Question.sum(:influence_score))).to_f
+    @diet_performance = current_user.diet_positive?
+    @exercise_performance = current_user.exercise_positive?
+    @stress_performance = current_user.stress_positive?
+    @sleep_performance = current_user.sleep_positive?
+    @diet_score = current_user.diet_score
+    @exercise_score = current_user.exercise_score
+    @stress_score = current_user.stress_score
+    @sleep_score = current_user.sleep_score
 
     if current_user.score < 0
       @brain_score = 0

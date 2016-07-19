@@ -9,87 +9,110 @@
       <% @treatments.each_with_index do |specific, idx| %>
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-parent="#accordion" ><%= specific[0]["name"] %></a>
+          <a class="treatment-title" data-parent="#accordion" ><%= specific[0]["name"] %></a>
         </h4>
       </div>
       <div class="panel-collapse collapse in">
         <div class="panel-body">
-          <%= specific[0]["description"] %>
+          <div class="description"><%= specific[0]["description"] %></div>
+          <br>
             <% if specific[0]["name"] == "Yoga" %>
             <% @yoga_locations.each do |yoga| %>
-                <%= yoga["name"] %>
-                <%= yoga["vicinity"] %>
-                <%= yoga["rating"] %>\
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= yoga["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= yoga["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= yoga["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Acupuncture" %>
             <% @acupuncture_locations.each do |acupuncture| %>
-                <%= acupuncture["name"] %>
-                <%= acupuncture["vicinity"] %>
-                <%= acupuncture["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= acupuncture["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= acupuncture["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= acupuncture["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Supplements" %>
             <% @supplements_locations.each do |supplements| %>
-                <%= supplements["name"] %>
-                <%= supplements["vicinity"] %>
-                <%= supplements["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= supplements["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= supplements["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= supplements["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Tai Chi/Matial Arts" %>
             <% @taichi_locations.each do |tai| %>
-                <%= tai["name"] %>
-                <%= tai["vicinity"] %>
-                <%= tai["rating"] %>
-                <% end %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= tai["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= tai["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating <strong><%= tai["rating"] %></div>
+              </div>
+              <% end %>
             <% end %>
             <% if specific[0]["name"] == "Biofeedback" %>
               <% @biofeedback_locations.each do |biofeedback| %>
-                <%= biofeedback["name"] %>
-                <%= biofeedback["vicinity"] %>
-                <%= biofeedback["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= biofeedback["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= biofeedback["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= biofeedback["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Massage Therapy" %>
               <% @massage_locations.each do |massage| %>
-                <%= massage["name"] %>
-                <%= massage["vicinity"] %>
-                <%= massage["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= massage["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= massage["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= massage["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Running" %>
             <% @running_locations.each do |running| %>
-                <%= running["name"] %>
-                <%= running["vicinity"] %>
-                <%= running["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= running["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= running["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= running["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Nutrition Training" %>
               <% @nutrition_locations.each do |nutrition| %>
-                <%= nutrition["name"] %>
-                <%= nutrition["vicinity"] %>
-                <%= nutrition["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= nutrition["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= nutrition["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= nutrition["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Hypnotherapy" %>
               <% @hypnotherapy_locations.each do |hypnotherapy| %>
-                <%= hypnotherapy["name"] %>
-                <%= hypnotherapy["vicinity"] %>
-                <%= hypnotherapy["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= hypnotherapy["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= hypnotherapy["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= hypnotherapy["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Meditation" %>
               <% @meditation_locations.each do |meditation| %>
-                <%= meditation["name"] %>
-                <%= meditation["vicinity"] %>
-                <%= meditation["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= meditation["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= meditation["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= meditation["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
             <% if specific[0]["name"] == "Get a Pet" %>
               <% @pet_locations.each do |pet| %>
-                <%= pet["name"] %>
-                <%= pet["vicinity"] %>
-                <%= pet["rating"] %>
+              <div class="thumbnail col-md-4 col-centered">
+                <div class="loc-name"><strong>Name: </strong><%= pet["name"] %></div>
+                <div class="loc-add"><strong>Address: </strong><%= pet["vicinity"] %></div>
+                <div class="loc-rate"><strong>Rating: </strong><%= pet["rating"] %></div>
+              </div>
               <% end %>
             <% end %>
         </div>
@@ -97,5 +120,6 @@
       <% end %>
     </div>
   </div>
-  <button class="btn btn-info" type="submit" ><%= link_to "Back to Results!", "api/v1/survey/results" %></button>
+
+  <%= link_to "Back to Results!", "api/v1/survey/results", class: "btn btn-info" %>
 </div>

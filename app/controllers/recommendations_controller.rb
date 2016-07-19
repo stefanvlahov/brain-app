@@ -5,7 +5,6 @@ class RecommendationsController < ApplicationController
       treatment_id: params[:treatment_id],
       user_id: current_user.id
     )
-
   end
 
   def index
@@ -32,7 +31,6 @@ class RecommendationsController < ApplicationController
     @meditation_locations = Location.where(treatment_type: "Meditation")
 
     @pet_locations = Location.where(treatment_type: "Get a Pet")
-    
-    # @treatment_descriptions = current_user.treatment_descriptions.keys.sort
+
   end
 end

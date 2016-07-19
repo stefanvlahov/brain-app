@@ -21,8 +21,6 @@ class UserAnswersController < ApplicationController
     @questions = Question.all
     @category_performance = Category.find(1).influence_score
 
-    # @answer_influence = (100.to_f / (Question.sum(:influence_score))).to_f
-
     if current_user.score < 0
       @brain_score = 0
     elsif current_user.score > 100
