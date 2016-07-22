@@ -14,13 +14,15 @@ h1 {
 .treatment-title:hover {
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .col-md-4 {
-  height: 90px;
-  max-height: 100px;
+  height: 100px;
+  max-height: 120px;
   max-width: 400px;
-  border: none;
+  border-style: outset;
+  border-width: medium;
 }
 
 .loc-name {

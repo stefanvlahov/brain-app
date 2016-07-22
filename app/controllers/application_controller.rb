@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
-  attr_accessor :username
+  # attr_accessor :username
 
   after_action :set_csrf_cookie_for_ng
 
@@ -19,11 +19,13 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
 
-      devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password,:username) }
+    added_attrs = [:email, :password, :password_confirmation]
 
-      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation,:username) }
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
 
-      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation,:username) }
+    devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
+
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
 
   end
 

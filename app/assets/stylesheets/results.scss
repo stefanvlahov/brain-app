@@ -16,12 +16,24 @@
   text-transform: uppercase;
 }
 
+.fa-cutlery,
+.fa-futbol-o,
+.fa-frown-o,
+.fa-bed {
+  float: left;
+  margin-left: 5px;
+}
+
 .background-color-green {
   background-color: #CEF6CE;
 }
 
 .background-color-red {
   background-color: #F5A9A9;
+}
+
+canvas {
+  border: 5px;
 }
 
 .herotreatments {

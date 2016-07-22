@@ -13,11 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # get '/last_choice/:id' => 'results#last_choice'
   get '/results' => 'results#index'
-
-  # post "/user_answers" => "user_answers#create"
-  # get "/survey/results" => "user_answers#index"
 
   post "/recommendations" => "recommendations#create"
   get "/recommendations" => "recommendations#index"

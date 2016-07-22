@@ -8,7 +8,8 @@
         <button class="btn btn-info" ng-repeat="choice in choices" ng-click="submitAnswer(choice.id)">{{ choice.answer }}</button>
       </div>
   </div>
+
   <div class="resultsbtn">
-    <button type="submit" class="btn btn-success btn-lg">See Results</button>
+      <%= link_to "See Results", "/api/v1/survey/results", class: "btn btn-info btn-lg"%>
   </div>
 </div>

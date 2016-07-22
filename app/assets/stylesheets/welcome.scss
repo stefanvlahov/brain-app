@@ -32,6 +32,7 @@ h1 {
   display:block;
   text-align: center;
   letter-spacing: 2px;
+  color: #00B3FF;
 }
 
 .hovereffect {
@@ -45,12 +46,12 @@ h1 {
 }
 
 .hovereffect .overlay {
-  width: 100%;
+  width: 50%;
   height: 100%;
   position: absolute;
   overflow: hidden;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.7);
+  left: 25%;
+  // background-color: rgba(255, 255, 255, 0.7);
   top: -200px;
   opacity: 0;
   filter: alpha(opacity=0);
